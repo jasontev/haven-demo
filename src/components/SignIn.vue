@@ -19,7 +19,7 @@ export default {
   },
   methods: {
       authenticate() {
-          socket.emit('/auth')
+          socket.emit('auth')
       }
   }
 }
