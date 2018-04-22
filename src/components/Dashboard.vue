@@ -1,6 +1,12 @@
 <template>
     <div>
-        {{ data }}
+        <nav class="navbar navbar-expand-lg">
+            <h1 class="navbar-brand"><a href="/" class="text-white">BookFace</a></h1>
+            <input class="form-control" placeholder="Fancy search feature" @click="authenticate"/>
+        </nav>
+        <div class="jumbotron">
+            <h1>Welcome back, {{ foo }}</h1>
+        </div>
     </div>
 </template>
 
@@ -12,7 +18,7 @@ export default {
   name: 'SignIn',
   data () {
       return {
-          data: {}
+          foo: {}
       }
   },
   mounted () {
@@ -23,7 +29,9 @@ export default {
     })
 
     socket.on('permissionData', (data) => {
-        this.data = data
+        console.log(data)
+        this.foo = data
+        console.log(this)
     })
   },
   computed: {
@@ -41,3 +49,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.navbar {
+    background-color: #3b5998;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5em;
+}
+</style>
