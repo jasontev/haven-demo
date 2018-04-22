@@ -16,15 +16,20 @@ const socket = io('http://localhost:4242')
 
 export default {
   name: 'SignIn',
+  data () {
+      return {
+          pubkey: ''
+      }
+  },
   mounted () {
     socket.open()
 
     socket.on('authenticated', (data) => {
         console.log(data)
-        this.$router.replace('/dashboard')
+        this.pubkey = data.pubkey
     })
     socket.on('permissionData', (data) => {
-        // console.log(data)
+        this.$router.replace({path: '/dashboard', query: { data: data, pubkey: this.pubkey }})
     })
   },
   methods: {

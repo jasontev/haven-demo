@@ -5,7 +5,15 @@
             <input class="form-control" placeholder="Fancy search feature" @click="authenticate"/>
         </nav>
         <div class="jumbotron">
-            <h1>Welcome back, {{ foo }}</h1>
+            <h1>Welcome back, {{ $route.query.data.name }}</h1>
+            <p>Info we have:</p>
+            <ul>
+                <li>{{ $route.query.data.name }}</li>
+                <li>{{ $route.query.data.email }}</li>
+            </ul>
+            <code>
+                {{ pubkey }}
+            </code>
         </div>
     </div>
 </template>
@@ -18,7 +26,8 @@ export default {
   name: 'SignIn',
   data () {
       return {
-          foo: {}
+          foo: {},
+          pubkey: ''
       }
   },
   mounted () {
@@ -26,6 +35,7 @@ export default {
 
     socket.on('authenticated', (data) => {
         console.log(data)
+        this.pubkey = data
     })
 
     socket.on('permissionData', (data) => {
