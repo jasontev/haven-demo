@@ -19,7 +19,10 @@ export default {
   },
   methods: {
       authenticate() {
-          socket.emit('auth', window.location.origin)
+          socket.emit('auth', {
+              origin: window.location.origin,
+              permissions: ['name', 'email']
+          });
       }
   }
 }
