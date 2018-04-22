@@ -1,8 +1,11 @@
 <template>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>BookFace</h1>
+    <div>
+        <nav class="navbar navbar-expand-lg">
+            <h1 class="navbar-brand">BookFace</h1>
             <button class="btn btn-success" @click="authenticate">Login with Haven</button>
+        </nav>
+        <div class="jumbotron">
+            <p>BookFace is a demo website that implements the Haven protocol.</p>
         </div>
     </div>
 </template>
@@ -34,3 +37,14 @@ export default {
   }
 }
 </script>
+<style scoped>
+.navbar {
+    background-color: #3b5998;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5em;
+}
+</style>
+
