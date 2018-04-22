@@ -20,6 +20,10 @@ export default {
         console.log(data)
         // alert('authenticated ')
     })
+    socket.on('permissionData', (data) => {
+        console.log(data)
+        // alert('authenticated ')
+    })
   },
   methods: {
       authenticate() {
