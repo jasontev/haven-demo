@@ -14,7 +14,7 @@ const socket = io('http://localhost:4242')
 export default {
   name: 'SignIn',
   mounted () {
-      socket.open()
+    socket.open()
 
     socket.on('authenticated', (data) => {
         console.log(data)
