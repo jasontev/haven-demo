@@ -7,9 +7,10 @@
         <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freebie-depot.com%2Fwp-content%2Fuploads%2F2015%2F04%2F20-Free.jpg&f=1" alt="">
         </nav>
         <div class="jumbotron">
-            <h1>MWAHAHAHA, <i>{{ $route.query.data.name }}</i>!<br>
-                WE HAVE THE NAME YOU GAVE US (i.e. "{{ $route.query.data.name }}") AND...<br>your <mark>public</mark> key :/</h1>
+            <h3>MWAHAHAHA, <i>{{ $route.query.data.name }}</i>!<br>
+                WE HAVE THE NAME YOU GAVE US (i.e. "{{ $route.query.data.name }}") AND...<br>your <mark>public</mark> key[1] :/</h3>
             <p>Well THAT sucks (for us)</p>
+            <p>[1] <code>0x{{ $route.query.fingerprint }}</code></p>
         </div>
     </div>
 </template>
