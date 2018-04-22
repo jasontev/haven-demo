@@ -2,8 +2,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Sign in thing</h1>
-            <button class="button" @click="authenticate">sign in</button>
-        
+            <button class="btn btn-success" @click="authenticate">sign in</button>
         </div>
     </div>
 </template>
@@ -12,14 +11,15 @@
 import io from 'socket.io-client'
 const socket = io('http://localhost:4242')
 
-socket.on('authenticated', (data) => {
-    console.log(data)
-})
-
 export default {
   name: 'SignIn',
   mounted () {
       socket.open()
+
+    socket.on('authenticated', (data) => {
+        console.log(data)
+        alert('authenticated ')
+    })
   },
   methods: {
       authenticate() {
