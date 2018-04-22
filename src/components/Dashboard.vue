@@ -12,7 +12,8 @@
                 <li>{{ $route.query.data.email }}</li>
                 <li>public key fingerprint <code>0x{{ $route.query.fingerprint.toUpperCase() }}</code></li>                
             </ul>
-            <code>{{ $route.query.pubkey }}</code>
+            <b>Signed fingerprint + timestamp</b>:<br>
+            <code>{{ $route.query.sig }}</code>
         </div>
     </div>
 </template>

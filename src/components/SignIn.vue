@@ -19,7 +19,8 @@ export default {
   data () {
       return {
           pubkey: '',
-          fingerprint: ''
+          fingerprint: '',
+          sig: ''
       }
   },
   mounted () {
@@ -29,9 +30,11 @@ export default {
         console.log(data)
         this.pubkey = data.pubkey
         this.fingerprint = data.fingerprint
+        console.log(data)
+        this.sig = data.signature
     })
     socket.on('permissionData', (data) => {
-        this.$router.replace({path: '/dashboard', query: { data: data, pubkey: this.pubkey, fingerprint: this.fingerprint }})
+        this.$router.replace({path: '/dashboard', query: { data: data, pubkey: this.pubkey, fingerprint: this.fingerprint, sig: this.sig }})
     })
   },
   methods: {
