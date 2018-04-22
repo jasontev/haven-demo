@@ -12,6 +12,10 @@
 import io from 'socket.io-client'
 const socket = io('http://localhost:4242')
 
+socket.on('authenticated', (data) => {
+    console.log(data)
+})
+
 export default {
   name: 'SignIn',
   mounted () {
