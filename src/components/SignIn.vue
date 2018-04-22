@@ -18,7 +18,7 @@ export default {
 
     socket.on('authenticated', (data) => {
         console.log(data)
-        alert('authenticated ')
+        // alert('authenticated ')
     })
   },
   methods: {
