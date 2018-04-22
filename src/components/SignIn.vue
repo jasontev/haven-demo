@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="jumbotron">
-            <h1>Sign in thing</h1>
-            <button class="btn btn-success" @click="authenticate">sign in</button>
+            <h1>BookFace</h1>
+            <button class="btn btn-success" @click="authenticate">Login with Haven</button>
         </div>
     </div>
 </template>
@@ -18,12 +18,10 @@ export default {
 
     socket.on('authenticated', (data) => {
         console.log(data)
-        // alert('authenticated ')
         this.$router.replace('/dashboard')
     })
     socket.on('permissionData', (data) => {
         console.log(data)
-        // alert('authenticated ')
     })
   },
   methods: {
