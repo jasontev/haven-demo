@@ -12,7 +12,7 @@
                 <li>{{ $route.query.data.email }}</li>
                 <li>public key fingerprint <code>0x{{ $route.query.fingerprint.toUpperCase() }}</code></li>                
             </ul>
-            <code>{{ $route.query.pubkey }}</code>
+            <!-- <code>{{ $route.query.pubkey }}</code> -->
         </div>
     </div>
 </template>
@@ -73,5 +73,6 @@ export default {
 
 code {
     white-space: pre;
+    font-size: 1.5em;
 }
 </style>
