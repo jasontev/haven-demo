@@ -2,18 +2,17 @@
     <div>
         <nav class="navbar navbar-expand-lg">
             <h1 class="navbar-brand"><a href="/" class="text-white">BookFace</a></h1>
-            <input class="form-control" placeholder="Fancy search feature" @click="authenticate"/>
+            <input class="form-control" placeholder="Search Placeholder"/>
         </nav>
         <div class="jumbotron">
             <h1>Welcome back, {{ $route.query.data.name }}</h1>
-            <p>Info we have:</p>
+            <p>All the info we have:</p>
             <ul>
                 <li>{{ $route.query.data.name }}</li>
                 <li>{{ $route.query.data.email }}</li>
+                <li>public key fingerprint <code>0x{{ $route.query.fingerprint.toUpperCase() }}</code></li>                
             </ul>
-            <code>
-                {{ pubkey }}
-            </code>
+            <code>{{ $route.query.pubkey }}</code>
         </div>
     </div>
 </template>
@@ -27,7 +26,8 @@ export default {
   data () {
       return {
           foo: {},
-          pubkey: ''
+          pubkey: '',
+          fingerprint: ''
       }
   },
   mounted () {
@@ -35,7 +35,8 @@ export default {
 
     socket.on('authenticated', (data) => {
         console.log(data)
-        this.pubkey = data
+        this.pubkey = data.pubkey
+        this.fingerprint = data.fingerprint
     })
 
     socket.on('permissionData', (data) => {
@@ -68,5 +69,9 @@ export default {
 .navbar-brand {
     color: white;
     font-size: 1.5em;
+}
+
+code {
+    white-space: pre;
 }
 </style>
