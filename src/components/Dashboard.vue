@@ -74,5 +74,6 @@ export default {
 
 code {
     white-space: pre;
+    font-size: 1.5em;
 }
 </style>
