@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        test
     </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
       email() {
           return ''
       }
-  }
+  },
   methods: {
       foo () {
           

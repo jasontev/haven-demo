@@ -19,6 +19,7 @@ export default {
     socket.on('authenticated', (data) => {
         console.log(data)
         // alert('authenticated ')
+        this.$router.replace('/dashboard')
     })
     socket.on('permissionData', (data) => {
         console.log(data)
