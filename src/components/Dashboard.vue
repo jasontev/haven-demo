@@ -1,6 +1,6 @@
 <template>
     <div>
-        test
+        {{ data }}
     </div>
 </template>
 
@@ -10,12 +10,20 @@ const socket = io('http://localhost:4242')
 
 export default {
   name: 'SignIn',
+  data () {
+      return {
+          data: {}
+      }
+  },
   mounted () {
       socket.open()
 
     socket.on('authenticated', (data) => {
         console.log(data)
+    })
 
+    socket.on('permissionData', (data) => {
+        this.data = data
     })
   },
   computed: {

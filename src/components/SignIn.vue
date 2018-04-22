@@ -21,7 +21,7 @@ export default {
         this.$router.replace('/dashboard')
     })
     socket.on('permissionData', (data) => {
-        console.log(data)
+        // console.log(data)
     })
   },
   methods: {
