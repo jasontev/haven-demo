@@ -1,18 +1,15 @@
 <template>
     <div>
         <nav class="navbar navbar-expand-lg">
-            <h1 class="navbar-brand"><a href="/" class="text-white">BookFace</a></h1>
-            <input class="form-control" placeholder="Search Placeholder"/>
+            <h1 class="navbar-brand"><a href="/" class="text-white">T0t4lly S3cure B4nk1ng</a></h1>
+        <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freebie-depot.com%2Fwp-content%2Fuploads%2F2015%2F04%2F20-Free.jpg&f=1" alt="">
+        <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freebie-depot.com%2Fwp-content%2Fuploads%2F2015%2F04%2F20-Free.jpg&f=1" alt="">
+        <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freebie-depot.com%2Fwp-content%2Fuploads%2F2015%2F04%2F20-Free.jpg&f=1" alt="">
         </nav>
         <div class="jumbotron">
-            <h1>Welcome back, {{ $route.query.data.name }}</h1>
-            <p>All the info we have:</p>
-            <ul>
-                <li>{{ $route.query.data.name }}</li>
-                <li>{{ $route.query.data.email }}</li>
-                <li>public key fingerprint <code>0x{{ $route.query.fingerprint.toUpperCase() }}</code></li>                
-            </ul>
-            <code>{{ $route.query.pubkey }}</code>
+            <h1>MWAHAHAHA, <i>{{ $route.query.data.name }}</i>!<br>
+                WE HAVE THE NAME YOU GAVE US (i.e. "{{ $route.query.data.name }}") AND...<br>your <mark>public</mark> key :/</h1>
+            <p>Well THAT sucks (for us)</p>
         </div>
     </div>
 </template>
@@ -62,16 +59,27 @@ export default {
 </script>
 
 <style scoped>
+code {
+    white-space: pre;
+    color: lawngreen;
+    background-color: black;
+}
+
 .navbar {
-    background-color: #3b5998;
+    background-color: #48ff00;
 }
 
 .navbar-brand {
-    color: white;
+    color: red;
     font-size: 1.5em;
 }
 
-code {
-    white-space: pre;
+button {
+    background-color: blue;
+    color: white;
+}
+
+img {
+    width: 10%
 }
 </style>
